@@ -26,7 +26,7 @@ namespace SpaDay.Controllers
 
         [HttpPost]
         [Route("/user")]
-        public IActionResult SubmitAddUserForm(AddUserViewModel addUserViewModel)
+        public IActionResult Add(AddUserViewModel addUserViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -46,9 +46,9 @@ namespace SpaDay.Controllers
                 ViewBag.error = "Passwords do not match! Try again!";
                 //ViewBag.userName = newUser.Username;
                 //ViewBag.eMail = newUser.Email;
-                return View("Add");
+                //return View("Add");
             }
+            return View(addUserViewModel);
         }
-
     }
 }
